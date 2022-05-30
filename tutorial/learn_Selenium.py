@@ -31,7 +31,7 @@ browser = webdriver.Chrome()
 url = "https://scraping-for-beginner.herokuapp.com/login_page"
 browser.get(url)
 
-browser.find_element_by_id("username")
+elem_username = browser.find_element_by_id("username")
 
 
 
