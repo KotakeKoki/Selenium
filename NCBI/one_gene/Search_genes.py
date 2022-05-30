@@ -26,7 +26,7 @@ url = "https://www.ncbi.nlm.nih.gov/"
 browser.get(url)
 
 search_win = browser.find_element(By.ID,"term")
-search_win.send_keys("Chgb")
+search_win.send_keys("KCN")
 
 search_button = browser.find_element(By.ID,"search")
 search_button.click()
@@ -56,9 +56,9 @@ gene
 
 # +
 res = requests.get(gene_url)
-res
+#res
 soup = BeautifulSoup(res.text,"html.parser")
-soup
+#soup
 
 #summaryのテーブル構造を抽出
 categoryItems = soup.find("dl",attrs={"id":"summaryDl"})
@@ -66,7 +66,7 @@ categoryItems = categoryItems.find_all("dd")
 
 gene["gene_type"] = categoryItems[4].text
 gene["summary"] = categoryItems[9].text
-gene
+#gene
 # -
 
 Location = soup.find("div",attrs={"class":"gt_cont_contents"})
@@ -76,3 +76,5 @@ df = pd.DataFrame(gene,index = [0])
 df
 
 df.to_csv("gene.csv",index = False)
+
+
