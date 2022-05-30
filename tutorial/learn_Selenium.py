@@ -155,4 +155,148 @@ soup.find_all("span",attrs={"class":"bold"})
 #https://webliker.info/css-selector-cheat-sheet/
 soup.select_one(".about_pad").text
 
+# <h1>Tutorilal4</h1>
+
+# +
+#Go back the site of tutorilal.
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://scraping-for-beginner.herokuapp.com/ranking/"
+res = requests.get(url)
+
+res
+# -
+
+soup = BeautifulSoup(res.text,"html.parser")
+#soup
+
+# +
+#First of all,Get a name of first tourist area
+#"u_areaListRankingBox"class contains informations of one area
+
+spots = soup.find_all("div",attrs={"class":"u_areaListRankingBox"})
+spot = spots[0]
+#spot.find_all("div",attrs={"class":"u_title"})
+#Confirm the class has only one text
+spot_name = spot.find("div",attrs={"class":"u_title"})
+spot_name
+# -
+
+spot_name.text
+
+#remove unnecessary information
+spot_name.find("span",attrs={"class":"badge"}).extract()
+
+spot_name
+
+spot_name = spot_name.text.replace("\n","")
+spot_name
+
+#Get the Score
+eval_num = spot.find("div",attrs={"class":"u_rankBox"}).text
+eval_num =eval_num.replace("\n" , "")
+
+spot
+
+categoryItems = spot.find("div",attrs = {"class","u_categoryTipsItem"})
+categoryItems
+
+categoryItems = categoryItems.find_all("dl")
+categoryItems
+
+#Get only "楽しさ"
+categoryItem = categoryItems[0]
+categoryItem
+
+#It's useful
+category = categoryItem.dt.text
+category
+
+#Get the Score
+rank = float(categoryItem.span.text)
+rank
+
+# +
+#make the dictionary
+details = {}
+
+categoryItem = categoryItems[0]
+category = categoryItem.dt.text
+rank = float(categoryItem.span.text)
+details[category] = rank
+
+details
+
+# +
+#Write the repetetion code
+
+for categoryItem in categoryItems:
+    category = categoryItem.dt.text
+    rank = float(categoryItem.span.text)
+    details[category] = rank
+details
+# -
+
+datum = details 
+datum["観光地名"] = spot_name
+datum["評価点"] = eval_num
+datum
+
+# +
+#Get Informations of All site 
+
+soup = BeautifulSoup(res.text,"html.parser")
+data = []
+
+spots = soup.find_all("div",attrs={"class":"u_areaListRankingBox"})
+for spot in spots:
+    spot_name = spot.find("div",attrs={"class":"u_title"})
+    spot_name.find("span",attrs={"class":"badge"}).extract()
+    spot_name = spot_name.text.replace("\n","")
+    eval_num = spot.find("div",attrs={"class":"u_rankBox"}).text
+    eval_num =eval_num.replace("\n" , "")
+
+    categoryItems = spot.find("div",attrs = {"class","u_categoryTipsItem"})
+    categoryItems = categoryItems.find_all("dl")
+
+
+    details = {}
+
+    categoryItem = categoryItems[0]
+    category = categoryItem.dt.text
+    rank = float(categoryItem.span.text)
+    details[category] = rank
+
+    for categoryItem in categoryItems:
+        category = categoryItem.dt.text
+        rank = float(categoryItem.span.text)
+        details[category] = rank
+
+    datum = details 
+    datum["観光地名"] = spot_name
+    datum["評価点"] = eval_num
+    data.append(datum)
+# -
+
+data
+
+import pandas as pd
+df = pd.DataFrame(data)
+
+df
+
+#Sort the col_name
+df.columns
+
+df = df[['観光地名', '評価点','楽しさ', '人混みの多さ', '景色', 'アクセス']]
+
+df
+
+
+
+
+
+
+
 
