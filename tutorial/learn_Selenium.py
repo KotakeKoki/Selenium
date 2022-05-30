@@ -58,6 +58,8 @@ browser.quit()
 
 """
 
+# <h1>Tutorial2</h1>
+
 elem = browser.find_element(By.ID,"name")
 elem.text
 
@@ -113,6 +115,8 @@ df
 # -
 
 df.to_csv("講師情報.csv")
+
+# <h1>Tutorial3</h1>
 
 # +
 #Let's use Beautiful Soup
@@ -293,9 +297,47 @@ df = df[['観光地名', '評価点','楽しさ', '人混みの多さ', '景色'
 
 df.to_csv("観光地情報.csv",index = False)
 
+# <h1>Tutorilal5</h1>
 
+import requests
+from bs4 import BeautifulSoup
 
+url = "https://scraping-for-beginner.herokuapp.com/image/"
+res = requests.get(url)
 
+soup = BeautifulSoup(res.text,"html.parser")
+soup
+
+image_tag = soup.find("img")
+image_tag["src"]
+#check the src of img
+
+#plus root URL
+root_url = "https://scraping-for-beginner.herokuapp.com"
+img_url = root_url + image_tag["src"]
+img_url
+
+#Preserve the image.
+from PIL import Image
+import io
+
+#Binary to Image
+img = Image.open(io.BytesIO(requests.get(img_url).content))
+img
+
+img.save("sample.jpg")
+
+# +
+soup = BeautifulSoup(res.text,"html.parser")
+image_tags = soup.find_all("img")
+
+#get the index number(enumerate)
+for i,img_tag in enumerate(image_tags):
+    root_url = "https://scraping-for-beginner.herokuapp.com"
+    img_url = root_url + img_tag["src"]
+    img = Image.open(io.BytesIO(requests.get(img_url).content))
+    img.save(f"sample{i}.jpg")
+# -
 
 
 
