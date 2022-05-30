@@ -114,4 +114,12 @@ df
 
 df.to_csv("講師情報.csv")
 
+# +
+#Let's use Beautiful Soup
+#Analyze the structure of HTML
 
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://scraping-for-beginner.herokuapp.com/Udemy"
+res = requests.get(url)

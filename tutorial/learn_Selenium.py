@@ -114,4 +114,45 @@ df
 
 df.to_csv("講師情報.csv")
 
+# +
+#Let's use Beautiful Soup
+#Analyze the structure of HTML
+
+import requests
+from bs4 import BeautifulSoup
+
+#url = "https://scraping-for-beginner.herokuapp.com/Udemy"
+#The page accessed in that video doesn't exist,so I access to Ikegayalab instead of that.
+#I'm not a member of that labolatory.
+url = "http://www.yakusaku.jp/"
+res = requests.get(url)
+res
+#<Response [200]> is OK.
+# -
+
+#Parser analyzes the structure of HTML
+soup = BeautifulSoup(res.content,"html.parser")
+soup
+
+#more readable by indent
+print(soup.prettify())
+
+#Get multiple "p"tags
+soup.find_all("p")
+
+#Get a specified text by class
+soup.find_all("p")
+
+#Get a text of the first "p"tag
+soup.find("p").text
+#equal "soup.p.text"
+
+soup.find_all("p",attrs={"class":"about_pad"})
+
+soup.find_all("span",attrs={"class":"bold"})
+
+#Another means of getting text(Use CSS selector)
+#https://webliker.info/css-selector-cheat-sheet/
+soup.select_one(".about_pad").text
+
 
