@@ -26,7 +26,7 @@ url = "https://www.ncbi.nlm.nih.gov/"
 browser.get(url)
 
 search_win = browser.find_element(By.ID,"term")
-search_win.send_keys("KCN")
+search_win.send_keys("KCNQ1")
 
 search_button = browser.find_element(By.ID,"search")
 search_button.click()
