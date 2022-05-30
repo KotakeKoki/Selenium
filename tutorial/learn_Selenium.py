@@ -291,7 +291,7 @@ df.columns
 
 df = df[['観光地名', '評価点','楽しさ', '人混みの多さ', '景色', 'アクセス']]
 
-df
+df.to_csv("観光地情報.csv",index = False)
 
 
 
