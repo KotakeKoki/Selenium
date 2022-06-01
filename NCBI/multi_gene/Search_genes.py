@@ -48,6 +48,10 @@ def Rattus_Ortholog():
 
 
 # +
+#https://www.ncbi.nlm.nih.gov/home/about/policies/
+#上記ページの"Guidelines for Scripting Calls to NCBI Servers"には"Do not overload NCBI's systems. "Make no more than 3 requests every 1 second."
+#一つずつクエリを送り、クリックのたびに数秒待つ分には大丈夫であると解釈し、以下のコードを記す。
+
 browser= webdriver.Chrome()
 df = pd.DataFrame()
 gene_df = pd.DataFrame()
@@ -58,6 +62,7 @@ with open('Objective_genes.txt') as f:
         try:
             url= "https://www.ncbi.nlm.nih.gov/"
             browser.get(url)
+            sleep(1)
             search_win = browser.find_element(By.ID,"term")
             search_win.send_keys(line)
             
@@ -65,6 +70,7 @@ with open('Objective_genes.txt') as f:
             try: 
                 search_button = browser.find_element(By.ID,"search")
                 search_button.click()
+                sleep(3)
             except:
                 pass
             
@@ -72,9 +78,11 @@ with open('Objective_genes.txt') as f:
             try: 
                 gene = browser.find_element(By.ID,"feat_gene_title")
                 gene.click()
+                sleep(3)
             except:
                 gene = browser.find_element(By.ID,"gene_title")
                 gene.click()
+                sleep(3)
             
             #humanの情報でいいときはここをコメントアウトする。ラットのオルソログがないものもあるので、その分エラーも増える。
             Rattus_Ortholog()
