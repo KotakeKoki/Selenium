@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 import requests 
 import pandas as pd
 import sys
+import datetime
 
 
 # +
@@ -77,7 +78,7 @@ with open('Objective_genes.txt') as f:
             
             #humanの情報でいいときはここをコメントアウトする。ラットのオルソログがないものもあるので、その分エラーも増える。
             Rattus_Ortholog()
-            #逆にマウスの情報が欲しい時は＃を消す
+            #逆にマウスの情報が欲しい時はここの＃を消す
             #mouse_Orthologs()
             
             #gene一つずつ、辞書を作ってdfに入れては辞書を初期化する手法をとる。
@@ -94,8 +95,20 @@ with open('Objective_genes.txt') as f:
             categoryItems = soup.find("dl",attrs={"id":"summaryDl"})
             categoryItems = categoryItems.find_all("dd")
             gene["gene_type"] = categoryItems[4].text
-            gene["also_known_as"] = categoryItems[8].text
-            gene["summary"] = categoryItems[9].text 
+            
+            #"Also known as欄の有無で抜き取るところが変わってくる"
+            
+            try:
+                also = categoryItems[12]
+                gene["also_known_as"] = categoryItems[8].text
+                gene["summary"] = categoryItems[9].text 
+                gene["Expression"] = categoryItems[10].text
+                print("also")
+            except:
+                gene["also_known_as"] = "Nothing"
+                gene["summary"] = categoryItems[8].text 
+                gene["Expression"] = categoryItems[9].text
+                print("None")
             #必要な情報が増える場合、ここで調節
             
             Location = soup.find("div",attrs={"class":"gt_cont_contents"})
@@ -115,14 +128,15 @@ with open('Objective_genes.txt') as f:
             gene["error"] = "error"
             gene_df = pd.DataFrame(gene,index = [0])
             df = pd.concat([gene_df,df],axis=0)
+
             
-df.to_csv("gene.csv",index = False)
+dt_now = datetime.datetime.now()
+df.to_csv(dt_now.strftime('%Y_%m_%d_%H_%M')+".csv",index = False)
 browser.quit()
 # -
 
 gene_df
 df
-#joined
 
 # <h1>Seleniumの強み</h1>
 
