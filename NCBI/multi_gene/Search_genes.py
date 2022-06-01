@@ -19,7 +19,6 @@ from bs4 import BeautifulSoup
 import requests 
 import pandas as pd
 import sys
-import re
 
 
 # +
@@ -33,22 +32,24 @@ def Rattus_Ortholog():
     ortholog = browser.find_element(By.LINK_TEXT,"all")
     ortholog.click()
     #tag = browser.find_element_by_css_selector('a[data-ga-label="Rattus norvegicus"]')
+    #ここ、コード書くときに詰まった。SeleniumでHTMLの出力→CSSセレクタでの指定が便利だ。
     tag = browser.find_element(By.CSS_SELECTOR,'a[data-ga-label="Rattus norvegicus"]')
     tag.click()
-    #ここで新しいタブが開く。一旦新しいタブに操作を移動させたのち、昔のタブを消す。
+    #ここで新しいタブが開いてしまう。一旦新しいタブに操作を移動させたのち、昔のタブを消す。
+    #こうするとタブはかさまず動き続けてくれる。
     sleep(5)
     browser.switch_to.window(browser.window_handles[1])
     browser.switch_to.window(browser.window_handles[0])
     browser.close()
     browser.switch_to.window(browser.window_handles[0])
 
-#同じ方法で各動物のオルソログを取ってくる関数も書けるだろう。
+#同じ方法で各動物のオルソログを取ってくる関数も書けるだろう。各動物種に対応可能。
 
 
 # +
 browser= webdriver.Chrome()
 df = pd.DataFrame()
-gene = pd.DataFrame()
+gene_df = pd.DataFrame()
 
 #Objective_genes.txtファイルに改行区切りで遺伝子名を入れておく。
 with open('Objective_genes.txt') as f:
@@ -106,13 +107,15 @@ with open('Objective_genes.txt') as f:
             else:
                 df= pd.DataFrame(gene,index = [0])
                 
-        #どこかしらでエラーが起きた場合はここへ。そのエラーを出力。
+        #どこかしらでエラーが起きた場合はここへ。そのエラー内容をeで取得。
         except Exception as e:
             gene = {}
             gene["name"] = line
-            gene["error"] = e
+            #gene["error"] = e こちらだとエラー内容を出力可能だが、嵩む。
+            gene["error"] = "error"
             gene_df = pd.DataFrame(gene,index = [0])
             df = pd.concat([gene_df,df],axis=0)
+            
 df.to_csv("gene.csv",index = False)
 browser.quit()
 # -
@@ -121,21 +124,27 @@ gene_df
 df
 #joined
 
+# <h1>Seleniumの強み</h1>
+
 # +
 #url = "https://www.ncbi.nlm.nih.gov/gene/5468/ortholog/?scope=7776"
 
 #res = requests.get(url)
 #soup = BeautifulSoup(res.text,"html.parser")
 #soup
-#javascriptのせいで、オルソログのページはBeautiful　Soupでは上手く取得できない。
-#Seleniumから以下のよう(page_source)にする。ここにSeleniumの強みがある。
+
+#javascriptのせいで、オルソログのページのHTMLはBeautiful　Soupでは上手く取得できない。
+#Seleniumから以下のよう(page_source)にする。すると人間が見たままのページのHTMLが出る。
+#ここにSeleniumの強みがある。
 #browser= webdriver.Chrome()
 #browser.get(url)
-#source_code = browser.page_source
+#source_code = browser.page_source#これを参照しながらfind_elementをすれば良い。
 #tag = browser.find_element_by_css_selector('a[data-ga-label="Rattus norvegicus"]')
 #tag.click()
 #categoryItems = soup.find("dl",attrs={"id":"summaryDl"})
 # -
+
+
 
 
 

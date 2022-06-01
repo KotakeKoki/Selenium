@@ -1,3 +1,103 @@
-name,url,gene_type,also_known_as,summary,Location
-"Kcnj11 potassium inwardly rectifying channel, subfamily J, member 11 [ Mus musculus (house mouse) ]",https://www.ncbi.nlm.nih.gov/gene/16514,protein coding,mBIR; Kir6.2,"Enables ATP binding activity; ATP-activated inward rectifier potassium channel activity; and ankyrin binding activity. Involved in potassium ion import across plasma membrane. Located in T-tubule. Part of inward rectifying potassium channel. Is expressed in several structures, including brain; cardiovascular system; gut; skeletal muscle tissue; and testis. Used to study permanent neonatal diabetes mellitus. Human ortholog(s) of this gene implicated in familial hyperinsulinemic hypoglycemia 2 and glucose metabolism disease (multiple). Orthologous to human KCNJ11 (potassium inwardly rectifying channel subfamily J member 11). [provided by Alliance of Genome Resources, Apr 2022]",7 B3; 7 29.66 cM
-Pparg peroxisome proliferator activated receptor gamma [ Mus musculus (house mouse) ],https://www.ncbi.nlm.nih.gov/gene/19016,protein coding,Nr1c3; PPARgamma; PPAR-gamma; PPARgamma2; PPAR-gamma2,"This gene encodes a nuclear receptor protein belonging to the peroxisome proliferator-activated receptor (Ppar) family. The encoded protein is a ligand-activated transcription factor that is involved in the regulation of adipocyte differentiation and glucose homeostasis. The encoded protein forms a heterodimer with retinoid X receptors and binds to DNA motifs termed ""peroxisome proliferator response elements"" to either activate or inhibit gene expression. Mice lacking the encoded protein die at an embryonic stage due to severe defects in placental vascularization. When the embryos lacking this gene are supplemented with healthy placentas, the mutants survive to term, but succumb to lipodystrophy and multiple hemorrhages. Alternative splicing results in multiple transcript variants encoding different isoforms. [provided by RefSeq, Apr 2015]",6 E3; 6 53.41 cM
+name,url,gene_type,also_known_as,summary,Location,error
+Irs1 insulin receptor substrate 1 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/25467/,protein coding,IRS1IRM,"Enables several functions, including SH2 domain binding activity; protein kinase binding activity; and signaling receptor binding activity. Involved in several processes, including cellular response to peptide hormone stimulus; regulation of insulin receptor signaling pathway; and regulation of peptide hormone secretion. Located in cytosol; intracellular membrane-bounded organelle; and plasma membrane. Part of insulin receptor complex. Used to study end stage renal disease; obesity; and type 2 diabetes mellitus. Biomarker of Alzheimer's disease; non-alcoholic fatty liver disease; and osteoporosis. Human ortholog(s) of this gene implicated in Alzheimer's disease; coronary artery disease; and type 2 diabetes mellitus. Orthologous to human IRS1 (insulin receptor substrate 1). [provided by Alliance of Genome Resources, Apr 2022]",9q34,
+Gck glucokinase [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/24385/,protein coding,GLK; GLUKA; RNGK2,"Enables several functions, including adenyl ribonucleotide binding activity; glucose binding activity; and hexokinase activity. Involved in several processes, including cellular chemical homeostasis; cellular response to hormone stimulus; and hexose metabolic process. Located in several cellular components, including basal cortex; nucleoplasm; and secretory granule. Colocalizes with actin filament. Used to study fatty liver disease; obesity; and type 2 diabetes mellitus. Human ortholog(s) of this gene implicated in artery disease (multiple); familial hyperinsulinemic hypoglycemia 3; and glucose metabolism disease (multiple). Orthologous to human GCK (glucokinase). [provided by Alliance of Genome Resources, Apr 2022]",14q21,
+Gckr glucokinase regulator [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/25658/,protein coding,GLRE,"Enables several functions, including carbohydrate binding activity; enzyme binding activity; and enzyme inhibitor activity. Involved in negative regulation of glucokinase activity; protein import into nucleus; and response to fructose. Located in cytosol; mitochondrion; and nucleoplasm. Human ortholog(s) of this gene implicated in end stage renal disease and type 2 diabetes mellitus. Orthologous to human GCKR (glucokinase regulator). [provided by Alliance of Genome Resources, Apr 2022]",6q14,
+Mtnr1b melatonin receptor 1B [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/192646/,protein coding,Mt2; Mel1b-r,"Predicted to enable G protein-coupled receptor activity. Involved in several processes, including negative regulation of cGMP-mediated signaling; negative regulation of transport; and regulation of transmission of nerve impulse. Predicted to be integral component of membrane. Predicted to be active in plasma membrane. Used to study acute pancreatitis. Human ortholog(s) of this gene implicated in type 2 diabetes mellitus. Orthologous to human MTNR1B (melatonin receptor 1B). [provided by Alliance of Genome Resources, Apr 2022]",8q12,
+G6pc2 glucose-6-phosphatase catalytic subunit 2 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/681817/,protein coding,Igrp; G6pc-rs,"Predicted to enable glucose-6-phosphatase activity. Predicted to be involved in glucose homeostasis and regulation of insulin secretion. Predicted to be located in endoplasmic reticulum. Orthologous to human G6PC2 (glucose-6-phosphatase catalytic subunit 2). [provided by Alliance of Genome Resources, Apr 2022]",3q21,
+Notch2 notch receptor 2 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/29492/,protein coding,"Predicted to enable NF-kappaB binding activity and enzyme binding activity. Involved in cell fate determination; tissue regeneration; and wound healing. Predicted to be located in several cellular components, including cell surface; cilium; and nucleoplasm. Predicted to be integral component of plasma membrane. Predicted to be part of receptor complex. Predicted to be active in extracellular matrix. Human ortholog(s) of this gene implicated in Alagille syndrome and Hajdu-Cheney syndrome. Orthologous to human NOTCH2 (notch receptor 2). [provided by Alliance of Genome Resources, Apr 2022]","Biased expression in Spleen (RPKM 260.8), Lung (RPKM 187.7) and 9 other tissues See more",2q34,
+"Adamts9 ADAM metallopeptidase with thrombospondin type 1 motif, 9 [ Rattus norvegicus (Norway rat) ]",https://www.ncbi.nlm.nih.gov/gene/312566/,protein coding,"Predicted to enable metalloendopeptidase activity. Predicted to be involved in several processes, including circulatory system development; negative regulation of endothelial cell migration; and negative regulation of sprouting angiogenesis. Predicted to act upstream of or within positive regulation of melanocyte differentiation; proteolysis; and response to bacterium. Predicted to be located in cell surface; endoplasmic reticulum; and extracellular space. Predicted to be active in extracellular matrix. Orthologous to human ADAMTS9 (ADAM metallopeptidase with thrombospondin type 1 motif 9). [provided by Alliance of Genome Resources, Apr 2022]",Annotation category: suggests misassembly,4q34,
+"THADA
+",,,,,,"Message: no such element: Unable to locate element: {""method"":""css selector"",""selector"":""[id=""gene_title""]""}
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x0000000101335170 chromedriver + 4477296
+1   chromedriver                        0x00000001012ccc18 chromedriver + 4049944
+2   chromedriver                        0x0000000100f1ed40 chromedriver + 191808
+3   chromedriver                        0x0000000100f4db28 chromedriver + 383784
+4   chromedriver                        0x0000000100f7685c chromedriver + 551004
+5   chromedriver                        0x0000000100f42f58 chromedriver + 339800
+6   chromedriver                        0x000000010130abd4 chromedriver + 4303828
+7   chromedriver                        0x000000010130f094 chromedriver + 4321428
+8   chromedriver                        0x0000000101313600 chromedriver + 4339200
+9   chromedriver                        0x000000010130faf4 chromedriver + 4324084
+10  chromedriver                        0x00000001012ee52c chromedriver + 4187436
+11  chromedriver                        0x0000000101327488 chromedriver + 4420744
+12  chromedriver                        0x00000001013275ec chromedriver + 4421100
+13  chromedriver                        0x000000010133b92c chromedriver + 4503852
+14  libsystem_pthread.dylib             0x00000001a0dc826c _pthread_start + 148
+15  libsystem_pthread.dylib             0x00000001a0dc308c thread_start + 8
+"
+Tspan8 tetraspanin 8 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/171048/,protein coding,CO-29; Tm4sf3,"Enables integrin binding activity. Involved in negative regulation of blood coagulation. Predicted to be located in cell surface. Predicted to be integral component of plasma membrane. Orthologous to human TSPAN8 (tetraspanin 8). [provided by Alliance of Genome Resources, Apr 2022]",7q22,
+Cdc123 cell division cycle 123 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/116656/,protein coding,D123,"Predicted to be involved in cell division. Predicted to be active in cytoplasm. Orthologous to human CDC123 (cell division cycle 123). [provided by Alliance of Genome Resources, Apr 2022]",17q12.3,
+Jazf1 JAZF zinc finger 1 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/685879/,protein coding,"Predicted to enable transcription corepressor activity. Predicted to act upstream of or within negative regulation of transcription by RNA polymerase II. Predicted to be located in cytosol; fibrillar center; and nucleoplasm. Predicted to be part of transcription repressor complex. Predicted to be active in nucleus. Orthologous to human JAZF1 (JAZF zinc finger 1). [provided by Alliance of Genome Resources, Apr 2022]","Biased expression in Brain (RPKM 42.4), Thymus (RPKM 41.3) and 9 other tissues See more",4q24,
+Wfs1 wolframin ER transmembrane glycoprotein [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/83725/,protein coding,"Enables several functions, including calmodulin binding activity; proteasome binding activity; and ubiquitin protein ligase binding activity. Involved in several processes, including negative regulation of ATF6-mediated unfolded protein response; protein stabilization; and regulation of transcription, DNA-templated. Is integral component of synaptic vesicle membrane. Used to study cataract; diabetes mellitus; and glucose intolerance. Biomarker of post-traumatic stress disorder and visual epilepsy. Human ortholog(s) of this gene implicated in Wolfram syndrome (multiple); auditory system disease (multiple); cataract 41; diabetes mellitus (multiple); and optic atrophy (multiple). Orthologous to human WFS1 (wolframin ER transmembrane glycoprotein). [provided by Alliance of Genome Resources, Apr 2022]","Biased expression in Brain (RPKM 87.3), Adrenal (RPKM 73.0) and 9 other tissues See more",14q21,
+"TCF2
+",,,,,,"Message: no such element: Unable to locate element: {""method"":""css selector"",""selector"":""[id=""gene_title""]""}
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x0000000101335170 chromedriver + 4477296
+1   chromedriver                        0x00000001012ccc18 chromedriver + 4049944
+2   chromedriver                        0x0000000100f1ed40 chromedriver + 191808
+3   chromedriver                        0x0000000100f4db28 chromedriver + 383784
+4   chromedriver                        0x0000000100f7685c chromedriver + 551004
+5   chromedriver                        0x0000000100f42f58 chromedriver + 339800
+6   chromedriver                        0x000000010130abd4 chromedriver + 4303828
+7   chromedriver                        0x000000010130f094 chromedriver + 4321428
+8   chromedriver                        0x0000000101313600 chromedriver + 4339200
+9   chromedriver                        0x000000010130faf4 chromedriver + 4324084
+10  chromedriver                        0x00000001012ee52c chromedriver + 4187436
+11  chromedriver                        0x0000000101327488 chromedriver + 4420744
+12  chromedriver                        0x00000001013275ec chromedriver + 4421100
+13  chromedriver                        0x000000010133b92c chromedriver + 4503852
+14  libsystem_pthread.dylib             0x00000001a0dc826c _pthread_start + 148
+15  libsystem_pthread.dylib             0x00000001a0dc308c thread_start + 8
+"
+"CDKAL1
+",,,,,,"Message: no such element: Unable to locate element: {""method"":""css selector"",""selector"":""a[data-ga-label=""Rattus norvegicus""]""}
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x0000000101335170 chromedriver + 4477296
+1   chromedriver                        0x00000001012ccc18 chromedriver + 4049944
+2   chromedriver                        0x0000000100f1ed40 chromedriver + 191808
+3   chromedriver                        0x0000000100f4db28 chromedriver + 383784
+4   chromedriver                        0x0000000100f7685c chromedriver + 551004
+5   chromedriver                        0x0000000100f42f58 chromedriver + 339800
+6   chromedriver                        0x000000010130abd4 chromedriver + 4303828
+7   chromedriver                        0x000000010130f094 chromedriver + 4321428
+8   chromedriver                        0x0000000101313600 chromedriver + 4339200
+9   chromedriver                        0x000000010130faf4 chromedriver + 4324084
+10  chromedriver                        0x00000001012ee52c chromedriver + 4187436
+11  chromedriver                        0x0000000101327488 chromedriver + 4420744
+12  chromedriver                        0x00000001013275ec chromedriver + 4421100
+13  chromedriver                        0x000000010133b92c chromedriver + 4503852
+14  libsystem_pthread.dylib             0x00000001a0dc826c _pthread_start + 148
+15  libsystem_pthread.dylib             0x00000001a0dc308c thread_start + 8
+"
+Igf2bp2 insulin-like growth factor 2 mRNA binding protein 2 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/303824/,protein coding,RGD1305614,"The protein encoded by this gene is a member of a family of mRNA binding proteins that have been shown to bind to several different mRNAs in mammalian cells, including insulin-like growth factor 2 mRNA. Generation of two different isoforms by alternative translation initiation at an internal start codon, has been described for this gene (PMID:22427968). [provided by RefSeq, Jul 2012]",11q23,
+"CDKN2A
+",,,,,,"Message: no such element: Unable to locate element: {""method"":""css selector"",""selector"":""a[data-ga-label=""Rattus norvegicus""]""}
+  (Session info: chrome=102.0.5005.61)
+Stacktrace:
+0   chromedriver                        0x0000000101335170 chromedriver + 4477296
+1   chromedriver                        0x00000001012ccc18 chromedriver + 4049944
+2   chromedriver                        0x0000000100f1ed40 chromedriver + 191808
+3   chromedriver                        0x0000000100f4db28 chromedriver + 383784
+4   chromedriver                        0x0000000100f7685c chromedriver + 551004
+5   chromedriver                        0x0000000100f42f58 chromedriver + 339800
+6   chromedriver                        0x000000010130abd4 chromedriver + 4303828
+7   chromedriver                        0x000000010130f094 chromedriver + 4321428
+8   chromedriver                        0x0000000101313600 chromedriver + 4339200
+9   chromedriver                        0x000000010130faf4 chromedriver + 4324084
+10  chromedriver                        0x00000001012ee52c chromedriver + 4187436
+11  chromedriver                        0x0000000101327488 chromedriver + 4420744
+12  chromedriver                        0x00000001013275ec chromedriver + 4421100
+13  chromedriver                        0x000000010133b92c chromedriver + 4503852
+14  libsystem_pthread.dylib             0x00000001a0dc826c _pthread_start + 148
+15  libsystem_pthread.dylib             0x00000001a0dc308c thread_start + 8
+"
+Hhex hematopoietically expressed homeobox [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/79237/,protein coding,Hex,"Enables sequence-specific DNA binding activity. Involved in several processes, including negative regulation of transcription, DNA-templated; response to peptide hormone; and response to wounding. Located in nucleus. Orthologous to human HHEX (hematopoietically expressed homeobox). [provided by Alliance of Genome Resources, Apr 2022]",1q53,
+Slc30a8 solute carrier family 30 member 8 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/299903/,protein coding,ZnT-8,"Predicted to enable protein homodimerization activity and zinc ion transmembrane transporter activity. Involved in several processes, including insulin secretion; ion homeostasis; and positive regulation of insulin secretion. Located in cytoplasmic vesicle. Human ortholog(s) of this gene implicated in type 2 diabetes mellitus. Orthologous to human SLC30A8 (solute carrier family 30 member 8). [provided by Alliance of Genome Resources, Apr 2022]",7q31,
+"Fto FTO, alpha-ketoglutarate dependent dioxygenase [ Rattus norvegicus (Norway rat) ]",https://www.ncbi.nlm.nih.gov/gene/291905/,protein coding,RGD1305121,"Predicted to enable 2-oxoglutarate-dependent dioxygenase activity and ferrous iron binding activity. Predicted to be involved in several processes, including mRNA destabilization; nucleic acid metabolic process; and regulation of respiratory system process. Predicted to be located in cytosol; nuclear speck; and plasma membrane. Human ortholog(s) of this gene implicated in obesity. Orthologous to human FTO (FTO alpha-ketoglutarate dependent dioxygenase). [provided by Alliance of Genome Resources, Apr 2022]",19p11,
+Tcf7l2 transcription factor 7 like 2 [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/679869/,protein coding,"Predicted to enable several functions, including DNA-binding transcription activator activity, RNA polymerase II-specific; armadillo repeat domain binding activity; and beta-catenin binding activity. Involved in negative regulation of apoptotic process and regulation of transcription by RNA polymerase II. Predicted to be located in chromatin; cytosol; and nucleoplasm. Predicted to be part of beta-catenin-TCF7L2 complex and protein-DNA complex. Biomarker of type 2 diabetes mellitus. Human ortholog(s) of this gene implicated in colorectal cancer; diabetes mellitus (multiple); pancreatic cancer; and prostate cancer. Orthologous to human TCF7L2 (transcription factor 7 like 2). [provided by Alliance of Genome Resources, Apr 2022]","Biased expression in Spleen (RPKM 33.3), Kidney (RPKM 29.6) and 9 other tissues See more",1q55,
+"Kcnj11 potassium inwardly-rectifying channel, subfamily J, member 11 [ Rattus norvegicus (Norway rat) ]",https://www.ncbi.nlm.nih.gov/gene/83535/,protein coding,Kir6.2,"Enables several functions, including ankyrin binding activity; inorganic cation transmembrane transporter activity; and protein C-terminus binding activity. Involved in several processes, including cation transport; cellular response to nicotine; and response to ischemia. Located in several cellular components, including axolemma; cell body fiber; and cytoplasmic vesicle. Part of inward rectifying potassium channel. Biomarker of brain disease (multiple); glucose metabolism disease (multiple); hypertension; and sciatic neuropathy. Human ortholog(s) of this gene implicated in familial hyperinsulinemic hypoglycemia 2 and glucose metabolism disease (multiple). Orthologous to human KCNJ11 (potassium inwardly rectifying channel subfamily J member 11). [provided by Alliance of Genome Resources, Apr 2022]",1q22,
+Pparg peroxisome proliferator-activated receptor gamma [ Rattus norvegicus (Norway rat) ],https://www.ncbi.nlm.nih.gov/gene/25664/,protein coding,PPARgamma2,"Enables several functions, including DNA-binding transcription factor activity; estrogen receptor binding activity; and protein phosphatase binding activity. Involved in several processes, including positive regulation of cell differentiation; regulation of cellular macromolecule biosynthetic process; and response to vitamin. Located in cytosol; nucleus; and perinuclear region of cytoplasm. Used to study several diseases, including acute kidney failure; artery disease (multiple); pancreatitis; polycystic kidney disease; and transient cerebral ischemia. Biomarker of several diseases, including alcoholic cardiomyopathy; diabetic encephalopathy; hyperandrogenism; obesity; and transient cerebral ischemia. Human ortholog(s) of this gene implicated in several diseases, including cardiovascular system disease (multiple); end stage renal disease; lipodystrophy (multiple); obesity; and type 2 diabetes mellitus. Orthologous to human PPARG (peroxisome proliferator activated receptor gamma). [provided by Alliance of Genome Resources, Apr 2022]",4q42,
