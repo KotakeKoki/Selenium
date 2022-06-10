@@ -39,6 +39,8 @@ doc_df = pd.DataFrame()
 #keywords.txtファイルに改行区切りでkeywordを入れておく。
 with open('keywords.txt') as f:
     for line in f.readlines():
+        df = pd.DataFrame()
+        doc_df = pd.DataFrame()
         try:
             url= "https://pubmed.ncbi.nlm.nih.gov/"
             browser.get(url)
@@ -54,19 +56,17 @@ with open('keywords.txt') as f:
                 pass
             
             hit = browser.find_element(By.CLASS_NAME,"results-amount").text
-            print(hit)
             hit_num = re.sub(r"\D", "", hit)
-            print(hit_num)
+            print(line+":hit"+hit_num+"papers")
             
             num = int(int(hit_num)/10)
             
-            if num >100:
-                print("too many articles to read.I'll get only first 1,000.")
-                num = 100
+            if num >200:
+                print("too many articles to read.I'll get only first 2,000.")
+                num = 200
                 
-            for i in range(num):
+            for i in range(num + 1):
                 try: 
-
                     #for i in range(len(docs)):
                     for i in range(10):
                         docs = browser.find_elements(By.CSS_SELECTOR,'a[data-ga-category="result_click"]')
@@ -78,15 +78,15 @@ with open('keywords.txt') as f:
                         year = browser.find_element(By.CLASS_NAME,"cit")
                         journal = browser.find_element(By.ID,"full-view-journal-trigger")
                         doc_url = browser.current_url
-                        print("OK1")
+                        #print("OK1")
 
                         try:
                             abstract = browser.find_element(By.CLASS_NAME,"abstract-content.selected")
                         except:
                             abstract = browser.find_element(By.CLASS_NAME,"empty-abstract")
 
-                        print("OK2")
-                        print(abstract.text)
+                        #print("OK2")
+                        #print(abstract.text)
 
 
                         doc["name"] = name.text
@@ -98,10 +98,10 @@ with open('keywords.txt') as f:
                         if "df" in globals():
                             doc_df = pd.DataFrame(doc,index = [0])
                             df = pd.concat([doc_df,df],axis=0)
-                            print("a")
+                            #print("a")
                         else:
                             df= pd.DataFrame(doc,index = [0])
-                        print("3")
+                        #print("3")
                         sleep(2)
                         browser.back()
                         sleep(3)
@@ -111,17 +111,18 @@ with open('keywords.txt') as f:
                     sleep(5)               
                 
                 except:
-                     print("error")
-                     browser.quit()
+                     print("error or done")
 
 
-
+            dt_now = datetime.datetime.now()
+            df.to_csv(line + hit_num + dt_now.strftime('%Y_%m_%d_%H_%M')+".csv",index = False)
         except:
-            print("error2")
+            print("no papers")
+            dt_now = datetime.datetime.now()
+            df.to_csv(line + "_nohit" + dt_now.strftime('%Y_%m_%d_%H_%M')+".csv",index = False)
             pass
 
-dt_now = datetime.datetime.now()
-df.to_csv(dt_now.strftime('%Y_%m_%d_%H_%M')+".csv",index = False)
+
 browser.quit()
 # -
 
