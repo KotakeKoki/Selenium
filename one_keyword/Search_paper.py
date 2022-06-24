@@ -24,6 +24,7 @@ import datetime
 import re
 
 # +
+# # +
 #https://www.ncbi.nlm.nih.gov/home/about/policies/
 #上記ページの"Guidelines for Scripting Calls to NCBI Servers"には"Do not overload NCBI's systems. "Make no more than 3 requests every 1 second."
 #一つずつクエリを送り、クリックのたびに数秒待つ分には問題ないと解釈し、以下のコードを記す。
@@ -41,6 +42,7 @@ with open('keywords.txt') as f:
     for line in f.readlines():
         df = pd.DataFrame()
         doc_df = pd.DataFrame()
+        doc_count = 0
         try:
             url= "https://pubmed.ncbi.nlm.nih.gov/"
             browser.get(url)
@@ -62,7 +64,7 @@ with open('keywords.txt') as f:
             num = int(int(hit_num)/10)
             
             if num >200:
-                print("too many articles to read.I'll get only first 2,000.")
+                print("too many articles to read.I'll get only first 200.")
                 num = 200
                 
             for i in range(num + 1):
@@ -74,8 +76,11 @@ with open('keywords.txt') as f:
                         doc = {}
                         doc_button = docs[i]
                         doc_button.click()
+                        doc_count += 1
+                        
                         name= browser.find_element(By.CLASS_NAME,"heading-title")
                         year = browser.find_element(By.CLASS_NAME,"cit")
+                        first = browser.find_element(By.CLASS_NAME,"full-name")
                         journal = browser.find_element(By.ID,"full-view-journal-trigger")
                         doc_url = browser.current_url
                         #print("OK1")
@@ -91,6 +96,7 @@ with open('keywords.txt') as f:
 
                         doc["name"] = name.text
                         doc["year"] = re.split('[;: ]', year.text)[0]
+                        doc["first"] = first.text
                         doc["url"] = doc_url
                         doc["journal"] = journal.text
                         doc["abstract"] = abstract.text
@@ -109,13 +115,15 @@ with open('keywords.txt') as f:
                     next_btn = browser.find_element(By.CLASS_NAME,"button-wrapper.next-page-btn")
                     next_btn.click()
                     sleep(5)               
-                
                 except:
-                     print("error or done")
+                    if int(doc_count) == int(hit_num)  or doc_count == 200:
+                        print("all done.")
+                    else:
+                        print("probably including an error. Please check it")
 
 
             dt_now = datetime.datetime.now()
-            df.to_csv(line + hit_num + dt_now.strftime('%Y_%m_%d_%H_%M')+".csv",index = False)
+            df.to_csv(line +"_" + hit_num + "hit_" + dt_now.strftime('%Y_%m_%d_%H_%M')+".csv",index = False)
         except:
             print("no papers")
             dt_now = datetime.datetime.now()
@@ -127,6 +135,10 @@ browser.quit()
 # -
 
 df
+print(len(author))
+print(doc_count)
+print(hit_num)
+print( int(doc_count) == int(hit_num))
 
 # <h1>Seleniumの強み</h1>
 
