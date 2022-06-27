@@ -134,12 +134,6 @@ with open('keywords.txt') as f:
 browser.quit()
 # -
 
-df
-print(len(author))
-print(doc_count)
-print(hit_num)
-print( int(doc_count) == int(hit_num))
-
 # <h1>Seleniumの強み</h1>
 
 # +
